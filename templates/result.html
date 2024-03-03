@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            background-image: url("/static/istockphoto-1671640101-612x612.jpg");
+            background-size: cover;
+            color: white; /* Set text color to white for better visibility */
+        }
+        .container {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent black background */
+            border-radius: 10px;
+            margin-top: 100px; /* Adjust this value to position the result vertically */
+            width: 50%; /* Adjust the width of the result container */
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Prediction Result</h2>
+        <p>Predicted Crop Yield: {{ prediction_text }} Q/acre</p>
+    </div>
+</body>
+</html>
+
+
+
+
+

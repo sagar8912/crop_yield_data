@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Yield Prediction</title>
+    <style>
+        body {
+            background-image: url("/static/istockphoto-1671640101-612x612.jpg");
+            background-size: cover;
+        }
+        .container {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background */
+            border-radius: 10px;
+            margin-top: 100px; /* Adjust this value to position the form vertically */
+            width: 50%; /* Adjust the width of the form container */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .slider-container {
+            margin-bottom: 10px;
+        }
+        .slider-label {
+            display: inline-block;
+            width: 120px;
+            text-align: right;
+            margin-right: 10px;
+        }
+        .feature-value {
+            display: inline-block;
+            width: 50px; /* Adjust width as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Crop Yield Prediction</h2>
+        <form action="/predict" method="post">
+            <div class="slider-container">
+                <label class="slider-label" for="rainfall">Rainfall (mm):</label>
+                <input type="range" id="rainfall" name="rainfall" min="0" max="200" value="100" step="1" oninput="updateValue('rainfall')">
+                <span id="rainfall-value" class="feature-value">100</span> mm
+            </div>
+            <div class="slider-container">
+                <label class="slider-label" for="fertilizer">Fertilizer:</label>
+                <input type="range" id="fertilizer" name="fertilizer" min="0" max="200" value="100" step="1" oninput="updateValue('fertilizer')">
+                <span id="fertilizer-value" class="feature-value">100</span>
+            </div>
+            <div class="slider-container">
+                <label class="slider-label" for="temperature">Temperature:</label>
+                <input type="range" id="temperature" name="temperature" min="0" max="50" value="25" step="1" oninput="updateValue('temperature')">
+                <span id="temperature-value" class="feature-value">25</span> °C
+            </div>
+            <div class="slider-container">
+                <label class="slider-label" for="nitrogen">Nitrogen (N):</label>
+                <input type="range" id="nitrogen" name="nitrogen" min="0" max="100" value="50" step="1" oninput="updateValue('nitrogen')">
+                <span id="nitrogen-value" class="feature-value">50</span>
+            </div>
+            <div class="slider-container">
+                <label class="slider-label" for="phosphorus">Phosphorus (P):</label>
+                <input type="range" id="phosphorus" name="phosphorus" min="0" max="100" value="50" step="1" oninput="updateValue('phosphorus')">
+                <span id="phosphorus-value" class="feature-value">50</span>
+            </div>
+            <div class="slider-container">
+                <label class="slider-label" for="potassium">Potassium (K):</label>
+                <input type="range" id="potassium" name="potassium" min="0" max="100" value="50" step="1" oninput="updateValue('potassium')">
+                <span id="potassium-value" class="feature-value">50</span>
+            </div>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+
+    <script>
+        // Function to update the displayed value when the slider changes
+        function updateValue(id) {
+            var slider = document.getElementById(id);
+            var valueDisplay = document.getElementById(id + "-value");
+            if (valueDisplay) {
+                valueDisplay.textContent = slider.value;
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
